@@ -3,12 +3,10 @@ import csv
 import requests
 import lxml
 
-url2 = 'https://docs.google.com/spreadsheets/d/1UK8mr6wzSlAYiopCwOO3Va8ekINX52BGty_V-qO7q8c/gviz/tq?tqx=out:html&tq&gid=1'
-
-url = 'https://docs.google.com/spreadsheets/d/1UK8mr6wzSlAYiopCwOO3Va8ekINX52BGty_V-qO7q8c/edit?gid=1017575603#gid=1017575603'
+url = 'https://docs.google.com/spreadsheets/d/1UK8mr6wzSlAYiopCwOO3Va8ekINX52BGty_V-qO7q8c/gviz/tq?tqx=out:html&tq&gid=1'
 
 
-html = requests.get(url2).text
+html = requests.get(url).text
 
 soup = BeautifulSoup(html, 'lxml')
 
