@@ -1,5 +1,6 @@
-# Datathon_2024
+# Python Automation: Google Sheet to Postgres
 
+![data architecture](./img/py_automation.gif)
 ## Usage
 
 - Fork the repository
