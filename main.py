@@ -1,19 +1,22 @@
 import os
 
+from dotenv import load_dotenv
+
 from scripts.extract import extract
 from scripts.load_to_csv import load_to_csv
+
+load_dotenv()
 
 
 def main(url, filename):
     data = extract(url)
-    load_2_csv = load_to_csv(data, filename)
+    load_to_csv(data, filename)
 
-    return load_2_csv
+    return
 
 
-url = "https://docs.google.com/spreadsheets/d/1UK8mr6wzSlAYiopCwOO3Va8ekINX52BGty_V-qO7q8c/gviz/tq?tqx=out:html&tq&gid=1"
-
-filename = "output.csv"
+url = os.getenv("URL")
+filename = os.getenv("FILENAME")
 
 if __name__ == "__main__":
     main(url, filename)
