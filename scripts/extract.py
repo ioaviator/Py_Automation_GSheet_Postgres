@@ -5,9 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def extract():
-
-    url = "https://docs.google.com/spreadsheets/d/1UK8mr6wzSlAYiopCwOO3Va8ekINX52BGty_V-qO7q8c/gviz/tq?tqx=out:html&tq&gid=1"
+def extract(url):
 
     html = requests.get(url).text
 

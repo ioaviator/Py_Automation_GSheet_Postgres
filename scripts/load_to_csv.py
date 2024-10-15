@@ -1,7 +1,5 @@
 import csv
 
-from extract import extract_data
-
 
 def load_to_csv(data, filename):
 
@@ -12,4 +10,4 @@ def load_to_csv(data, filename):
         writer.writerow(headers)
         writer.writerows(rows)
 
-    print("Data successfully extracted and saved to output.csv")
+    print(f"Data successfully extracted and saved to {filename}")
