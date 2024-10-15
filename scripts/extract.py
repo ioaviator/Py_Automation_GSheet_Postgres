@@ -1,19 +1,20 @@
 import csv
+from typing import List, Tuple
 
 import lxml
 import requests
 from bs4 import BeautifulSoup
 
 
-def extract(url):
+def extract(url: str) -> Tuple[List[str], List[List[str]]]:
 
     html = requests.get(url).text
 
     soup = BeautifulSoup(html, "lxml")
 
-    table = soup.find("table")
+    table: List = soup.find("table")
     # Extract the headers
-    headers = [
+    headers: List[str] = [
         header.get_text(strip=True) for header in table.find_all("tr")[0].find_all("td")
     ]
 

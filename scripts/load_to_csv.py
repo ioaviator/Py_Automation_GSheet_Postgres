@@ -1,7 +1,8 @@
 import csv
+from typing import Tuple
 
 
-def load_to_csv(data, filename):
+def load_to_csv(data: Tuple, filename: str) -> None:
 
     headers, rows = data
     # Write to CSV file
@@ -11,3 +12,5 @@ def load_to_csv(data, filename):
         writer.writerows(rows)
 
     print(f"Data successfully extracted and saved to {filename}")
+
+    return

@@ -8,7 +8,7 @@ from scripts.load_to_csv import load_to_csv
 load_dotenv()
 
 
-def main(url, filename):
+def main(url: str, filename: str) -> None:
     data = extract(url)
     load_to_csv(data, filename)
 
