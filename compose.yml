@@ -1,0 +1,24 @@
+---
+services:
+  app:
+    image: "python-app"
+    container_name: app
+    build: .
+    restart: always
+    environment:
+      - URL=https://docs.google.com/spreadsheets/d/1UK8mr6wzSlAYiopCwOO3Va8ekINX52BGty_V-qO7q8c/gviz/tq?tqx=out:html&tq&gid=1
+      - FILENAME=output.csv
+  
+  postgres:
+    image: postgres:15
+    container_name: database
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=gs_pg
+      - POSTGRES_USER=postgres
+    volumes:
+     - db:/var/lib/postgresql/data
+
+volumes:
+  db:
