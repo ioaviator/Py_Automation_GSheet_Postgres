@@ -13,10 +13,12 @@ services:
     image: postgres:15
     container_name: database
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
-      - POSTGRES_DB=gs_pg
-      - POSTGRES_USER=postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: gs_pg
+
     volumes:
      - db:/var/lib/postgresql/data
   
